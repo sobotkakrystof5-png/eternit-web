@@ -90,9 +90,16 @@ export const services: Service[] = [
   },
   {
     id: "leseni",
-    title: "Pronájem lešení",
-    lead: `Popis pronájmu ${DOPLNIT}`,
-    points: [`Typ lešení ${DOPLNIT}`, `Podmínky a cena ${DOPLNIT}`],
+    title: "Půjčovna lešení",
+    // Text dodal klient (2026-10-12).
+    lead: "Nabízím pronájem kvalitního rámového lešení Pletac PD 70 pro stavební, rekonstrukční a dokončovací práce.",
+    points: [
+      "Vhodné pro rodinné domy, fasády, střechy a další stavební práce",
+      "Možnost pronájmu jednotlivých částí nebo kompletní sestavy",
+      "Doprava a montáž po dohodě",
+      "Pronájem krátkodobý i dlouhodobý",
+      "Cena dle množství lešení a délky pronájmu",
+    ],
     photoLabel: "Lešení na stavbě",
     photo: { src: "/fotky/leseni/foto.webp", alt: "Lešení postavené u rozestavěného domu" },
     primary: false,

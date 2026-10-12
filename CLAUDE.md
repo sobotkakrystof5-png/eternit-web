@@ -68,12 +68,12 @@ Tuto sekci aktualizuj na konci každé session. Je to jediný způsob, jak dalš
   - 2026-10-12: reference vlastní na webu, ne Google ani Seznam.
   - 2026-10-12: sjednocené bílé pozadí, mapa jako skutečné SVG krajů ČR.
   - 2026-10-12: čísla ve Stats potvrzena zadavatelem: 30+ zakázek, 100 % spokojených klientů, 5+ let praxe (místo „3 kraje“). Upozorněno, že „100 %“ působí šablonovitě.
+  - 2026-10-12: text lešení dodán klientem (Půjčovna lešení, rámové lešení Pletac PD 70), doplněno do `src/data/site.ts`.
   - 2026-10-12: v sekci Kde působíme se uvádí jen kraje, žádná města (popisky měst odstraněny).
 - **Otevřené otázky čekající na klienta:**
   - pravopis příjmení (Varchol / Varhol),
   - telefon, e-mail, IČO, adresa,
   - texty reference a seznam projektů do galerie + fotky,
-  - popis pronájmu lešení,
   - oprávnění/certifikace k práci s azbestem,
   - existuje web malířských prací (odkaz ve Spolupráci)?
   - potvrzení hostingu na Vercelu.
