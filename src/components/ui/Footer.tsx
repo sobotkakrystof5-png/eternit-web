@@ -28,8 +28,19 @@ export function Footer() {
             </ul>
           </nav>
         </div>
-        <div className="mx-auto max-w-[90rem] border-t border-line px-4 py-5 text-[13px] text-ink-soft sm:px-6 lg:px-10">
-          © {site.ownerName}
+        <div className="mx-auto flex max-w-[90rem] flex-col gap-1 border-t border-line px-4 py-5 text-[13px] text-ink-soft sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-10">
+          <span>© {site.ownerName}</span>
+          <span>
+            Vyrobeno{" "}
+            <a
+              href="https://vizeon.cz"
+              target="_blank"
+              rel="noopener"
+              className="font-bold text-ink hover:text-green"
+            >
+              VIZEON
+            </a>
+          </span>
         </div>
       </div>
     </footer>
