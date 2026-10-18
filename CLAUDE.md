@@ -70,6 +70,7 @@ Tuto sekci aktualizuj na konci každé session. Je to jediný způsob, jak dalš
   - 2026-10-12: čísla ve Stats potvrzena zadavatelem: 30+ zakázek, 100 % spokojených klientů, 5+ let praxe (místo „3 kraje“). Upozorněno, že „100 %“ působí šablonovitě.
   - 2026-10-12: text lešení dodán klientem (Půjčovna lešení, rámové lešení Pletac PD 70), doplněno do `src/data/site.ts`.
   - 2026-10-12: v sekci Kde působíme se uvádí jen kraje, žádná města (popisky měst odstraněny).
+  - 2026-10-18: reference doplněny do `src/data/references.ts`: Aleš Muller (MÚ Hoštka) a Blažim Szaffner (Březina-Louny). Zbývá 1 placeholder reference.
   - 2026-10-18: úvodní fotka (hero) je `public/fotky/hero/hero-zakazka.webp` (739×344 px, ořez od screenshotu, dodal klient; zdroj a rozlišení ověřit, na desktopu se bude zvětšovat). Předchozí `hero-malesov.webp` a `hero-litomerice.webp` zůstávají v repu, jen se na ně neodkazuje.
   - 2026-10-18: Litoměřice (`08-litomerice`) má 8 fotek; poslední `08.webp` je kopie bývalé úvodní fotky `hero-litomerice.webp`.
   - 2026-10-18: Řepčice (`11-repcice-trebusin`) má 3 fotky od klienta: `01.webp` je úvodní (bílé boxy), `02.webp` je oříznutý screenshot (černé pruhy odstraněny, 739×556 px, nízké rozlišení), `03.webp` střecha. Původních 5 fotek odstraněno.
