@@ -15,13 +15,15 @@ type Props = {
   fill?: boolean;
   /** CSS object-position pro ořez při `object-cover`, např. "50% 30%". */
   objectPosition?: string;
+  /** `cover` ořízne fotku do rámu, `contain` ji zobrazí celou ve svém původním poměru. */
+  fit?: "cover" | "contain";
 };
 
 /**
  * Všechny obrázky webu jdou přes tuto komponentu.
  * Bez `src` vykreslí zřetelně označený placeholder. Fotky dodá klient, nikdy fotobanka.
  */
-export function Photo({ src, alt, label, ratio = "4 / 3", sizes, className = "", preload, tone = "light", fill, objectPosition }: Props) {
+export function Photo({ src, alt, label, ratio = "4 / 3", sizes, className = "", preload, tone = "light", fill, objectPosition, fit = "cover" }: Props) {
   const box = fill ? "absolute inset-0" : "relative w-full";
   const style = fill ? undefined : { aspectRatio: ratio };
 
@@ -53,8 +55,16 @@ export function Photo({ src, alt, label, ratio = "4 / 3", sizes, className = "",
   }
 
   return (
-    <div style={style} className={`${box} overflow-hidden bg-mist ${className}`}>
-      <Image src={src} alt={alt} fill sizes={sizes} preload={preload} style={objectPosition ? { objectPosition } : undefined} className="object-cover" />
+    <div style={style} className={`${box} overflow-hidden ${tone === "dark" ? "bg-transparent" : "bg-mist"} ${className}`}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        preload={preload}
+        style={objectPosition ? { objectPosition } : undefined}
+        className={fit === "contain" ? "object-contain" : "object-cover"}
+      />
     </div>
   );
 }

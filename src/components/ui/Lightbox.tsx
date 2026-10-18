@@ -72,7 +72,7 @@ export function Lightbox({ title, photos, index, onIndexChange, onClose }: Props
 
           <div className="relative my-4 flex min-h-0 flex-1 items-center justify-center">
             <div className="relative h-full max-h-[80svh] w-full max-w-6xl">
-              <Photo src={photo.src} alt={photo.alt} label={photo.alt} sizes="100vw" tone="dark" fill className="object-contain" />
+              <Photo src={photo.src} alt={photo.alt} label={photo.alt} sizes="100vw" tone="dark" fill fit="contain" />
             </div>
           </div>
 

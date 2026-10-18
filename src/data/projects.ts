@@ -31,10 +31,10 @@ export const projects: Project[] = [
   project("05-zitenice-litomerice", "Žitenice, Litoměřice", "Demontáž eternitu", 7),
   project("06-msene-lazne", "Mšené Lázně", "Demontáž eternitu", 2),
   project("07-prosec-pod-jestedem-cesky-dub", "Proseč pod Ještědem, Český Dub", "Likvidace eternitu", 4),
-  project("08-litomerice", "Litoměřice", "Likvidace eternitu", 7),
+  project("08-litomerice", "Litoměřice", "Likvidace eternitu", 8),
   project("09-liberec", "Liberec", "Likvidace eternitu", 1),
   project("10-jencice", "Jenčice", "Likvidace eternitu", 5),
-  project("11-repcice-trebusin", "Řepčice, Třebušín", "Demontáž eternitu", 5),
-  project("12-hostka", "Hoštka", "Demontáž eternitu", 3),
+  project("11-repcice-trebusin", "Řepčice, Třebušín", "Demontáž eternitu", 3),
+  project("12-hostka", "Hoštka", "Demontáž eternitu", 4),
   project("13-libochovice", "Libochovice", "Demontáž eternitu", 4),
 ];
