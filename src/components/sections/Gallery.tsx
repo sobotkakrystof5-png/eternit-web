@@ -46,7 +46,7 @@ export function Gallery() {
                 </div>
               </div>
               <span className="mt-4 flex items-baseline justify-between gap-4 border-b border-line pb-3">
-                <span className="font-wide text-[19px] font-extrabold group-hover:text-green">{p.title}</span>
+                <span className="font-wide text-[19px] font-extrabold group-hover:text-green-text">{p.title}</span>
                 <span className="shrink-0 text-[13px] font-semibold text-ink-soft">{photoCount(p.photos.length)}</span>
               </span>
               <span className="mt-2 block text-[14px] text-ink-soft">{p.place}</span>

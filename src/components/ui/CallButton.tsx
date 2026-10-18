@@ -8,8 +8,8 @@ type Props = {
 
 const styles = {
   mint: "bg-mint text-ink hover:bg-white",
-  green: "bg-green text-paper hover:bg-green-deep",
-  ghost: "border border-ink/20 text-ink hover:border-green hover:text-green",
+  green: "bg-green text-ink hover:bg-green-hover",
+  ghost: "border border-ink/20 text-ink hover:border-green hover:text-green-text",
 };
 
 /** Hlavní CTA webu. Dokud chybí číslo, vede na sekci Kontakt. */

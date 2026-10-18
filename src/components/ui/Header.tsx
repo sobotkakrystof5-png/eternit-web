@@ -60,7 +60,7 @@ export function Header() {
       <div className="mx-auto flex h-[4.5rem] max-w-[90rem] items-center justify-between gap-6 px-4 sm:px-6 lg:px-10">
         <a href="#" className="group flex flex-col leading-none" aria-label={`${site.ownerName}, zpět nahoru`}>
           <span className="font-wide text-[22px] font-black uppercase tracking-[-0.01em]">{site.wordmark}</span>
-          <span className="mt-1 text-[10.5px] font-bold uppercase tracking-[0.22em] text-green">{site.wordmarkSub}</span>
+          <span className="mt-1 text-[10.5px] font-bold uppercase tracking-[0.22em] text-green-text">{site.wordmarkSub}</span>
         </a>
 
         <nav aria-label="Hlavní navigace" className="hidden xl:block">
@@ -71,7 +71,7 @@ export function Header() {
                   href={`#${item.id}`}
                   aria-current={active === item.id ? "true" : undefined}
                   className={`relative px-3 py-2 text-[14px] font-semibold transition-colors ${
-                    active === item.id ? "text-green" : "text-ink hover:text-green"
+                    active === item.id ? "text-green-text" : "text-ink hover:text-green-text"
                   }`}
                 >
                   {item.label}
@@ -120,7 +120,7 @@ export function Header() {
                 href={`#${item.id}`}
                 onClick={() => setOpen(false)}
                 aria-current={active === item.id ? "true" : undefined}
-                className={`font-wide block py-3.5 text-[20px] font-bold ${active === item.id ? "text-green" : "text-ink"}`}
+                className={`font-wide block py-3.5 text-[20px] font-bold ${active === item.id ? "text-green-text" : "text-ink"}`}
               >
                 {item.label}
               </a>

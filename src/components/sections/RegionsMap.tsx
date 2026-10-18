@@ -40,7 +40,7 @@ export function RegionsMap() {
                   aria-pressed={hover === r.id}
                   className="group flex w-full items-center justify-between py-4 text-left"
                 >
-                  <span className={`font-wide text-[22px] font-extrabold transition-colors ${hover === r.id ? "text-green" : ""}`}>
+                  <span className={`font-wide text-[22px] font-extrabold transition-colors ${hover === r.id ? "text-green-text" : ""}`}>
                     {r.name}
                   </span>
                 </button>
@@ -70,7 +70,7 @@ export function RegionsMap() {
                   onMouseLeave={active ? () => setHover(null) : undefined}
                   style={{ transitionDelay: lit && !hover ? `${0.2 + order.indexOf(region.id) * 0.25}s` : "0s" }}
                   className={`stroke-paper transition-[fill] duration-500 ${
-                    lit ? (isHover ? "cursor-pointer fill-green-deep" : "cursor-pointer fill-green") : active ? "fill-line" : "fill-mist"
+                    lit ? (isHover ? "cursor-pointer fill-green-hover" : "cursor-pointer fill-green") : active ? "fill-line" : "fill-mist"
                   }`}
                 />
               );
@@ -83,7 +83,7 @@ export function RegionsMap() {
                   x={r.center[0]}
                   y={r.center[1] + (r.id === "ustecky" ? 44 : r.id === "stredocesky" ? 40 : 0)}
                   textAnchor="middle"
-                  className="pointer-events-none fill-paper font-sans text-[17px] font-bold max-sm:hidden"
+                  className="pointer-events-none fill-ink font-sans text-[17px] font-bold max-sm:hidden"
                   style={{ opacity: inView ? 1 : 0, transition: "opacity .6s 1s" }}
                 >
                   {r.name.replace(" kraj", "")}

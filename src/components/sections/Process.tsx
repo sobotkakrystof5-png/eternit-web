@@ -40,7 +40,7 @@ export function Process() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="relative grid grid-cols-[48px_1fr] gap-6 pb-12 last:pb-0 sm:gap-8"
             >
-              <span className="font-wide relative z-10 flex h-12 w-12 items-center justify-center border-2 border-green bg-paper text-[17px] font-black text-green">
+              <span className="font-wide relative z-10 flex h-12 w-12 items-center justify-center border-2 border-green bg-paper text-[17px] font-black text-green-text">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div className="pt-2">

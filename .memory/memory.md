@@ -15,8 +15,9 @@ Nepřehodnocují se bez výslovného pokynu uživatele. Převzato z `AGENTS.md` 
 - **2026-10-12:** Jednostránkový web (landing page) s kotvovou navigací a scrollspy. Záměrné a závazné.
 - **2026-10-12:** Bez kontaktního formuláře, rozhodnutí klienta. Kontakt jen telefonem (hlavní CTA) a e-mailem. Žádný backend, žádné API klíče.
 - **2026-10-12:** Reference jsou vlastní na webu, ne Google ani Seznam.
-- **2026-10-12:** Design varianta A: sjednocené bílé pozadí na celé stránce (žádné tmavé sekce), text `#0E120F`, akcent zelená `#1F7A3E`, světlá zelená `#4FD07D` jen na tmavém overlayi hero. Písma Archivo (nadpisy) a Manrope (text). Podpisový motiv: vlnovka podle profilu eternitové desky.
+- **2026-10-12:** Design varianta A: sjednocené bílé pozadí na celé stránce (žádné tmavé sekce), text `#0E120F`, zelená `#5ED33F` (přesný odstín z dodaného obrázku) na plochách a v hero; text `#317C1D`. Viz rozhodnutí 2026-10-18. Písma Archivo (nadpisy) a Manrope (text). Podpisový motiv: vlnovka podle profilu eternitové desky.
 - **2026-10-12:** Mapa je skutečný tvar ČR rozdělený na kraje (SVG), tři kraje svítí a reagují na hover. Proces je časová osa ve stylu Vizeon s postupnou animací.
+- **2026-10-18:** Akcent webu je přesná zelená z dodaného obrázku `#5ED33F` (na pokyn uživatele, nahrazuje `#1F7A3E` a `#4FD07D`). Na bílé se tato zelená jako text nesmí použít (kontrast 1,9:1), text a obrysy jdou v `#317C1D`, tlačítka mají tmavý text. Hero zesvětlený (překryv ink/80 → ink/10).
 - **2026-10-12:** Bez loga. Inspirace likvidace-eternitu.org (zelená, černá), přebírá se jen směr, ne copy ani layout 1:1. Zdroj: poznámky uživatele v Pages.
 - **2026-10-12:** `AGENTS.md` je jediný zdroj pravidel pro všechny agenty, `CLAUDE.md` na něj má jen odkazovat. Rozhodla jiná session při paralelní práci, zde zaznamenáno.
 - **2026-10-12:** Paměť žije ve skryté složce `.memory/`, ne v `memory/`. Důvod: složku takto založil uživatel.
@@ -61,6 +62,12 @@ Aby to příští session neopravila jako chybu.
 
 ## Changelog
 Nejnovější nahoře.
+
+### 2026-10-18: Přesná zelená a zesvětlené hero
+- **Co:** Akcent přepnut na `#5ED33F` (vzorkováno z dodaného obrázku). Pro text, ikony a obrysy na bílém přidán tmavší odstín `#317C1D`, hover ploch `#4EC72E`. Tlačítka s tmavým textem, mapa s tmavým popiskem. Překryv hero zesvětlen z ink/90–25 na ink/80–10.
+- **Proč:** na pokyn uživatele. Tmavý odstín kvůli WCAG AA, zelená z obrázku na bílém nesplňuje kontrast jako text.
+- **Dopad:** všechny sekce (barvy přes tokeny v `globals.css`). Hero čitelnost ověřena na mobilním náhledu. Focus ring v `#317C1D`. Build a lint bez chyb.
+- **Soubory:** `src/app/globals.css`, `src/components/ui/CallButton.tsx`, `src/components/ui/EmailButton.tsx`, `src/components/sections/Hero.tsx`, `src/components/sections/RegionsMap.tsx`, `src/components/sections/*.tsx`, `src/components/ui/{Header,Footer,SectionHeading}.tsx`
 
 ### 2026-10-12: Texty od klienta
 - **Co:** Dosazeny texty dodané klientem: hero (nadtitulek „Litoměřice a široké okolí“, podtitulek), úvod hlavní služby a seznam „Proč si vybrat právě nás?“ místo bodů služby, úvod a závěrečná věta v Kde působíme, postup rozšířen z 6 na 8 kroků (krok může mít víc odstavců), nadpis a úvod Kontaktu, SEO description. Pořadí krajů změněno na Ústecký, Liberecký, Středočeský podle klienta.

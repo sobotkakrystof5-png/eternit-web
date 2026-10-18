@@ -35,7 +35,7 @@ export function Stats() {
         {stats.map((s) => (
           <div key={s.label} className="flex items-baseline gap-4 border-b border-line py-6 last:border-b-0 sm:border-b-0 sm:px-8 sm:first:pl-0">
             <dt className="order-2 text-[15px] font-semibold text-ink-soft">{s.label}</dt>
-            <dd className="font-wide order-1 text-[clamp(2.4rem,5vw,3.6rem)] font-black leading-none text-green">
+            <dd className="font-wide order-1 text-[clamp(2.4rem,5vw,3.6rem)] font-black leading-none text-green-text">
               {s.value === null ? <span className="text-[16px] font-bold tracking-normal text-ink-soft">{DOPLNIT}</span> : <Counter to={s.value} />}
               {s.suffix}
             </dd>

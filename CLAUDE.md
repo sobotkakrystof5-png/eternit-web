@@ -49,7 +49,7 @@ Před každou změnou kódu nebo novým zadáním:
 - **Tech stack:** Next.js 16 (App Router) + TypeScript, Tailwind CSS, Framer Motion, hosting Vercel. Žádný backend, žádné API klíče. Obsah v datových souborech `src/data/*`.
 - **Struktura webu:** jednostránkový web (landing page) s kotvovou navigací a scrollspy. Toto je záměrné a závazné rozhodnutí, ne návrh k tichému přehodnocení.
 - **Kontakt:** **bez formuláře** (rozhodnutí klienta). Pouze telefon (hlavní CTA) a e-mail.
-- **Design:** varianta A z Claude Design. **Sjednocené bílé pozadí** na celé stránce (žádné tmavé sekce), text `#0E120F`, akcent zelená `#1F7A3E`, světlá zelená `#4FD07D` jen na tmavém overlayi hero. Písma Archivo (nadpisy) + Manrope (text). Podpisový motiv: vlnovka podle profilu eternitové desky. Mapa = skutečný tvar ČR rozdělený na kraje, tři kraje svítí a reagují na hover. Proces = časová osa ve stylu Vizeon s postupnou animací.
+- **Design:** varianta A z Claude Design. **Sjednocené bílé pozadí** na celé stránce (žádné tmavé sekce), text `#0E120F`, zelená `#5ED33F` (přesný odstín z dodaného obrázku) na plochách a v hero; text `#317C1D`. Viz rozhodnutí 2026-10-18. Písma Archivo (nadpisy) + Manrope (text). Podpisový motiv: vlnovka podle profilu eternitové desky. Mapa = skutečný tvar ČR rozdělený na kraje, tři kraje svítí a reagují na hover. Proces = časová osa ve stylu Vizeon s postupnou animací.
 - **Fotky:** projekt je ve fázi návrhu, všechna místa pro fotky jsou prázdné, jasně označené placeholdery. Fotky se doplní, až je klient dodá. Nenahrazuj je bez podkladů a nikdy nepoužívej fotobanku.
 - **Nejvyšší priorita:** originalita bez šablonovitého AI vzhledu (viz `varchol-claude-code-prompt.md`, sekce 0), věcná a důvěryhodná prezentace, rychlost s velkým množstvím fotek.
 

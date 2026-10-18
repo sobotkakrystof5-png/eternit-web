@@ -50,7 +50,7 @@ Uživatel je vlastník a zadavatel projektu, ne junior vývojář. Chovej se jak
 - **Tech stack:** Next.js 16 (App Router) + TypeScript, Tailwind CSS, Framer Motion, hosting Vercel. Žádný backend, žádné API klíče.
 - **Struktura:** jednostránkový web (landing page), kotvy `#sluzby`, `#kde-pusobime`, `#proces`, `#reference`, `#galerie`, `#o-nas`, `#spoluprace`, `#kontakt`, scrollspy. Závazné rozhodnutí.
 - **Kontakt:** **bez formuláře** (rozhodnutí klienta). Jen telefon (hlavní CTA) a e-mail.
-- **Design:** varianta A z Claude Design. Sjednocené **bílé pozadí** na celé stránce, text `#0E120F`, akcent `#1F7A3E`, světlá zelená `#4FD07D` jen na tmavém overlayi hero. Písma Archivo + Manrope. Motiv: vlnovka podle profilu eternitové desky. Mapa = skutečné SVG krajů ČR, tři kraje svítí a reagují na hover. Proces = časová osa ve stylu Vizeon s postupnou animací.
+- **Design:** varianta A z Claude Design. Sjednocené **bílé pozadí** na celé stránce, text `#0E120F`, zelená `#5ED33F` (přesný odstín z dodaného obrázku) na plochách, liniích a v hero; text a obrysy `#317C1D` (kontrast 5,2:1 na bílé). Písma Archivo + Manrope. Motiv: vlnovka podle profilu eternitové desky. Mapa = skutečné SVG krajů ČR, tři kraje svítí a reagují na hover. Proces = časová osa ve stylu Vizeon s postupnou animací.
 - **Fotky:** zatím jasně označené placeholdery. Nenahrazovat bez podkladů, **nikdy fotobanka**.
 - **Priorita:** originalita bez AI šablony, důvěryhodnost, rychlost i s velkým množstvím fotek.
 

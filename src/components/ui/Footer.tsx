@@ -9,7 +9,7 @@ export function Footer() {
         <div className="mx-auto grid max-w-[90rem] gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.2fr_2fr] lg:px-10">
           <div>
             <p className="font-wide text-[26px] font-black uppercase">{site.wordmark}</p>
-            <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.22em] text-green">{site.wordmarkSub}</p>
+            <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.22em] text-green-text">{site.wordmarkSub}</p>
             <p className="mt-5 text-[14px] leading-relaxed text-ink-soft">
               {site.ownerName}, {site.town}
               <br />
@@ -20,7 +20,7 @@ export function Footer() {
             <ul className="grid grid-cols-2 gap-x-6 gap-y-2.5 sm:grid-cols-4">
               {nav.map((item) => (
                 <li key={item.id}>
-                  <a href={`#${item.id}`} className="text-[14px] font-semibold text-ink hover:text-green">
+                  <a href={`#${item.id}`} className="text-[14px] font-semibold text-ink hover:text-green-text">
                     {item.label}
                   </a>
                 </li>
@@ -36,7 +36,7 @@ export function Footer() {
               href="https://vizeon.cz"
               target="_blank"
               rel="noopener"
-              className="font-bold text-ink hover:text-green"
+              className="font-bold text-ink hover:text-green-text"
             >
               VIZEON
             </a>

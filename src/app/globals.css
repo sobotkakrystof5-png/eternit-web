@@ -7,11 +7,14 @@
   --color-ink-soft: #48514b;
   --color-line: #d9dfda;
   --color-mist: #f1f4f1;
-  --color-green: #1f7a3e;
-  --color-green-deep: #165c2e;
+  /* Přesná zelená z dodaného obrázku (vzorkováno z JPEG). Plochy, linky, mapa, tlačítka s tmavým textem. */
+  --color-green: #5ed33f;
+  /* Hover na plochách zelené (text zůstává tmavý). */
+  --color-green-hover: #4ec72e;
+  /* Zelená pro text, ikony a obrysy na bílém. Kontrast 5,2:1, světlá zelená na bílé nesplní WCAG AA. */
+  --color-green-text: #317c1d;
   --color-green-wash: #e3f0e7;
-  /* Jen na tmavém overlayi hero. */
-  --color-mint: #4fd07d;
+  --color-mint: var(--color-green);
 
   --font-display: var(--font-archivo), "Arial Narrow", sans-serif;
   --font-sans: var(--font-manrope), system-ui, sans-serif;
@@ -38,14 +41,14 @@
   }
 
   :focus-visible {
-    outline: 3px solid var(--color-green);
+    outline: 3px solid var(--color-green-text);
     outline-offset: 3px;
     border-radius: 2px;
   }
 
   ::selection {
     background: var(--color-green);
-    color: var(--color-paper);
+    color: var(--color-ink);
   }
 }
 

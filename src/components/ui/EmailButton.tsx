@@ -8,8 +8,8 @@ type Props = {
 
 const styles = {
   mint: "border border-paper/50 text-paper hover:border-mint hover:text-mint",
-  green: "border border-green text-green hover:bg-green hover:text-paper",
-  ghost: "border border-ink/20 text-ink hover:border-green hover:text-green",
+  green: "border border-green-text text-green-text hover:bg-green hover:text-ink",
+  ghost: "border border-ink/20 text-ink hover:border-green hover:text-green-text",
 };
 
 /** Druhé kontaktní CTA vedle telefonu. Dokud chybí e-mail, vede na sekci Kontakt. */

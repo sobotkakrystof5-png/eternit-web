@@ -24,7 +24,7 @@ export function About() {
           <dl className="mt-10 grid max-w-xl grid-cols-2 border-y border-line divide-x divide-line">
             {aboutStats.map((s) => (
               <div key={s.label} className="py-6 pr-6 [&:not(:first-child)]:pl-8">
-                <dd className="font-wide text-[clamp(2.4rem,5vw,3.6rem)] font-black leading-none text-green">
+                <dd className="font-wide text-[clamp(2.4rem,5vw,3.6rem)] font-black leading-none text-green-text">
                   {s.value}
                   {s.suffix}
                 </dd>

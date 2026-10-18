@@ -15,7 +15,7 @@ export function Hero() {
       <Photo src="/fotky/hero/hero-zakazka.webp" objectPosition="50% 30%" label="Úvodní fotka" alt="" sizes="100vw" tone="dark" fill preload />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-linear-100 from-ink/90 via-ink/70 to-ink/25"
+        className="absolute inset-0 bg-linear-100 from-ink/80 via-ink/55 to-ink/10"
       />
 
       <div className="relative mx-auto flex min-h-[min(86svh,52rem)] max-w-[90rem] flex-col justify-end px-4 pb-20 pt-24 sm:px-6 lg:px-10 lg:pb-28">

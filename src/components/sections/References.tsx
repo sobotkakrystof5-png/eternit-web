@@ -8,7 +8,7 @@ export function References() {
       <ul className="mt-14 grid gap-px border border-line bg-line md:grid-cols-3">
         {references.map((r, i) => (
           <li key={i} className="flex flex-col bg-paper p-6 sm:p-8">
-            <span aria-hidden="true" className="font-wide text-[64px] font-black leading-[0.6] text-green">
+            <span aria-hidden="true" className="font-wide text-[64px] font-black leading-[0.6] text-green-text">
               „
             </span>
             <blockquote className="mt-4 flex-1 text-[17px] leading-relaxed">{r.quote}</blockquote>

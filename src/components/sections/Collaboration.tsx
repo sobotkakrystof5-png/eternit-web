@@ -30,14 +30,14 @@ export function Collaboration() {
           </motion.span>
           <motion.span
             aria-hidden="true"
-            className="text-green"
+            className="text-green-text"
             variants={{ apart: { scale: 0.4, opacity: 0 }, together: { scale: 1, opacity: 1 } }}
             transition={{ ...join, delay: 0.35 }}
           >
             ×
           </motion.span>
           <motion.span
-            className="text-green"
+            className="text-green-text"
             variants={{ apart: { x: "18%", opacity: 0 }, together: { x: 0, opacity: 1 } }}
             transition={join}
           >
@@ -49,7 +49,7 @@ export function Collaboration() {
         <div className="mt-12 flex justify-center">
           <a
             href={site.paintingWebUrl}
-            className="inline-flex items-center gap-2 border border-ink px-5 py-3 text-[15px] font-bold transition-colors hover:border-green hover:bg-green hover:text-paper"
+            className="inline-flex items-center gap-2 border border-ink px-5 py-3 text-[15px] font-bold transition-colors hover:border-green hover:bg-green hover:text-ink"
             rel="noopener"
             target="_blank"
           >

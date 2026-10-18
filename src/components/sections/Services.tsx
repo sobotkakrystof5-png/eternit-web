@@ -12,7 +12,7 @@ export function Services() {
         <article className="grid border border-line md:grid-cols-2">
           <Photo src={main.photo?.src} label={main.photoLabel} alt={main.photo?.alt ?? ""} ratio="4 / 5" sizes="(min-width: 1024px) 32vw, (min-width: 768px) 50vw, 100vw" className="md:h-full" />
           <div className="flex flex-col p-6 sm:p-8">
-            <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-green">Hlavní služba</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-green-text">Hlavní služba</p>
             <h3 className="font-wide mt-3 text-[clamp(1.6rem,2.6vw,2.2rem)] font-extrabold leading-[1.02]">{main.title}</h3>
             <p className="mt-4 text-[16px] leading-relaxed text-ink-soft">{main.lead}</p>
             {main.pointsTitle && <h4 className="mt-7 text-[15px] font-extrabold">{main.pointsTitle}</h4>}
