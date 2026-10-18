@@ -90,7 +90,7 @@ export const services: Service[] = [
   },
   {
     id: "leseni",
-    title: "Půjčovna lešení",
+    title: "Pronájem lešení",
     // Text dodal klient (2026-10-12).
     lead: "Nabízím pronájem kvalitního rámového lešení Pletac PD 70 pro stavební, rekonstrukční a dokončovací práce.",
     points: [
