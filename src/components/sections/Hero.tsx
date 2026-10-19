@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { site } from "@/data/site";
 import { Photo } from "@/components/ui/Photo";
 import { CallButton } from "@/components/ui/CallButton";
 import { EmailButton } from "@/components/ui/EmailButton";
@@ -12,23 +11,14 @@ const lines = ["Likvidace", "eternitu", "a azbestu"];
 export function Hero() {
   return (
     <section aria-labelledby="hero-title" className="relative isolate mt-[4.5rem] overflow-hidden bg-ink text-paper">
-      <Photo src="/fotky/hero/hero-zakazka.webp" objectPosition="50% 30%" label="Úvodní fotka" alt="" sizes="100vw" tone="dark" fill preload />
+      <Photo src="/fotky/hero/hero-zakazka.webp" objectPosition="100% 0%" label="Úvodní fotka" alt="" sizes="100vw" tone="dark" fill preload />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-linear-100 from-ink/80 via-ink/55 to-ink/10"
+        className="absolute inset-0 bg-linear-100 from-ink/55 via-ink/20 to-transparent"
       />
 
       <div className="relative mx-auto flex min-h-[min(86svh,52rem)] max-w-[90rem] flex-col justify-end px-4 pb-20 pt-24 sm:px-6 lg:px-10 lg:pb-28">
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-[12px] font-bold uppercase tracking-[0.2em] text-mint"
-        >
-          {site.town} a široké okolí
-        </motion.p>
-
-        <h1 id="hero-title" className="font-display mt-5 text-[clamp(2.5rem,8vw,6.4rem)] font-black uppercase leading-[0.88] tracking-[-0.02em] [font-stretch:100%]">
+        <h1 id="hero-title" className="font-display text-[clamp(2.5rem,8vw,6.4rem)] font-black uppercase leading-[0.88] tracking-[-0.02em] [font-stretch:100%]">
           {lines.map((line, i) => (
             <span key={line} className="block overflow-hidden pb-[0.04em]">
               <motion.span

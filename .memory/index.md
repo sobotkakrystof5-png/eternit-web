@@ -3,7 +3,7 @@
 Čti jako první v každé session, před jakoukoli prací. Tento soubor sám nemá žádný obsah, jen ukazuje, kde co je a v jakém stavu projekt je.
 
 ## 1. Stav projektu (jedna řádka)
-**Fáze:** Kostra webu hotová (Next.js 16.4, všechny sekce s placeholdery), build a lint bez chyb. Čeká se na podklady od klienta. Brief `varchol-claude-code-prompt.md` v kořeni stále není.
+**Fáze:** Kostra hotová; fotky, reference, statistiky a kontakty doplněny či potvrzeny 2026-10-19. Probíhá nasazení na Vercel; čeká se na pravopis jména a doménu. Brief `varchol-claude-code-prompt.md` v kořeni stále není.
 Detail je vždy v `memory.md`, sekce „Aktuální stav“.
 
 ## 2. Systémové soubory

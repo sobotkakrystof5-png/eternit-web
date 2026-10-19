@@ -1,0 +1,4 @@
+Contact: mailto:mvarchy@gmail.com
+Expires: 2027-10-19T23:59:59.000Z
+Preferred-Languages: cs, en
+Canonical: https://eternit-web-six.vercel.app/.well-known/security.txt

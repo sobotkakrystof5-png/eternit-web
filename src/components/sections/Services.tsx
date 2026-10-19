@@ -6,7 +6,7 @@ export function Services() {
   const [main, ...rest] = services;
   return (
     <section id="sluzby" aria-labelledby="sluzby-title" className="mx-auto max-w-[90rem] px-4 pt-28 sm:px-6 lg:px-10">
-      <SectionHeading id="sluzby-title" eyebrow="Co děláme" title="Eternit dolů, střecha připravená na novou krytinu." />
+      <SectionHeading id="sluzby-title" eyebrow="Co děláme" title="Zajišťujeme odbornou demontáž, likvidaci eternitu a azbestu v Litoměřicích, Ústeckém, Libereckém a Středočeském kraji." />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-[1.7fr_1fr]">
         <article className="grid border border-line md:grid-cols-2">

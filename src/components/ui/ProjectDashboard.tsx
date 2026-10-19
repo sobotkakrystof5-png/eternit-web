@@ -50,9 +50,9 @@ export function ProjectDashboard({ project, onOpenPhoto, onClose }: Props) {
             </button>
           </div>
 
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-6 columns-1 gap-3 sm:columns-2 lg:columns-3">
             {project.photos.map((photo, i) => (
-              <li key={i}>
+              <li key={i} className="mb-3 break-inside-avoid">
                 <button
                   type="button"
                   onClick={() => onOpenPhoto(i)}
@@ -64,7 +64,7 @@ export function ProjectDashboard({ project, onOpenPhoto, onClose }: Props) {
                       src={photo.src}
                       alt={photo.alt}
                       label={photo.alt}
-                      ratio="4 / 3"
+                      natural
                       sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
                     />
                   </div>

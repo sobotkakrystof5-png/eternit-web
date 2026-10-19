@@ -3,15 +3,16 @@
 > Aktuální postoj. Přepisuj volně, historie je v ostatních souborech.
 > Čti na začátku každé session, která se dotýká bezpečnosti.
 
-**Poslední aktualizace:** 2026-10-12 (kostra webu v Next.js 16.4, hlavičky zatím nenasazené)
+**Poslední aktualizace:** 2026-10-19 (bezpečnostní konfigurace připravena k nasazení; Vercel tým z této relace nepřístupný)
 
 ## Projekt
 
-- Web: doména zatím není potvrzená
-- Hosting: Vercel (podle `CLAUDE.md`, klient to ještě nepotvrdil)
+- Web: `https://eternit-web-six.vercel.app/`; vlastní doména zatím není potvrzená
+- Hosting: Vercel, uživatelem potvrzeno 2026-10-19
 - Framework: Next.js 16, App Router, TypeScript, Tailwind, Framer Motion
-- Repo: zatím nezaloženo samostatně, soukromé: ano (doporučeno)
-- Soubor s hlavičkami: zatím nezvoleno, viz Otevřené položky
+- Repo: `sobotkakrystof5-png/eternit-web`, veřejné
+- Soubor s hlavičkami: `vercel.json`
+- Vercel Authentication: deployment URL je chráněná; po připojení vlastní domény ověřit veřejnou dostupnost.
 
 ## Model hrozeb
 
@@ -30,24 +31,24 @@ Realistický útočník: automatické skenery a boty na sběr kontaktů. Nejhor�
 
 ## Hlavičky nasazené
 
-Nic zatím není nasazeno, web neexistuje.
+Hlavičky jsou nakonfigurované v `vercel.json`; živé nasazení a kontrola hlaviček čekají na vzdálený build. CSP záměrně není v první fázi zahrnutá.
 
 | Hlavička | Stav | Poznámka |
 |---|---|---|
-| Strict-Transport-Security | ⏳ plán | `max-age=63072000; includeSubDomains`, bez `preload` |
-| Content-Security-Policy | ⏳ plán | greenfield, viz sekce CSP |
-| X-Content-Type-Options | ⏳ plán | nosniff |
-| X-Frame-Options | ⏳ plán | DENY |
-| Referrer-Policy | ⏳ plán | strict-origin-when-cross-origin |
-| Permissions-Policy | ⏳ plán | zakázat vše, co web nepoužívá (kamera, mikrofon, geolokace…) |
-| Cross-Origin-Opener-Policy | ⏳ plán | same-origin |
-| Cross-Origin-Resource-Policy | ⏳ plán | same-origin |
+| Strict-Transport-Security | 🟡 připraveno | `max-age=63072000; includeSubDomains`, bez `preload` |
+| Content-Security-Policy | ⏳ otevřeno | Nejprve ověřit Report-Only; Next.js 16 CSP s nonce může změnit statické renderování |
+| X-Content-Type-Options | 🟡 připraveno | nosniff |
+| X-Frame-Options | 🟡 připraveno | DENY |
+| Referrer-Policy | 🟡 připraveno | strict-origin-when-cross-origin |
+| Permissions-Policy | 🟡 připraveno | Zakázané nepoužívané funkce; fullscreen povolený pro web |
+| Cross-Origin-Opener-Policy | 🟡 připraveno | same-origin |
+| Cross-Origin-Resource-Policy | 🟡 připraveno | same-origin |
 | X-Powered-By odstraněno | ✅ v kódu | `poweredByHeader: false` v `next.config.ts` (2026-10-12) |
 
 ## CSP
 
 Verze: zatím žádná (viz `CSP-LOG.md`)
-Režim: plán je enforcing od začátku (greenfield). Web se staví tak, aby politice vyhovoval.
+Režim: živý web; nasadit postupně v Report-Only po ověření základních hlaviček a chování v prohlížeči.
 Třetí strany, které by měly být potřeba: **žádné plánované.** Mapa ČR je vlastní SVG, obrázky přes `next/image`. Písma Archivo a Manrope jen přes `next/font` (samohostovaná), ne přes Google Fonts CDN. Jakýkoli externí embed (mapa Google či Mapy.cz v Kontaktu, analytika, widget) znamená novou položku v CSP a záznam v `CSP-LOG.md`.
 Známé výjimky: očekává se `style-src 'unsafe-inline'` (Next.js a Framer Motion vkládají styly za běhu), zapsat do `DECISIONS.md`, až se skutečně nasadí.
 
@@ -74,11 +75,11 @@ Známé výjimky: očekává se `style-src 'unsafe-inline'` (Next.js a Framer Mo
 
 | Položka | Proč na tom záleží | Vlastník | Termín |
 |---|---|---|---|
-| Zvolit způsob CSP: nonce přes `middleware.ts` vs. statická CSP v `next.config` | Next.js typicky vkládá inline skripty. Bez nonce nebo `unsafe-inline` se může web nespustit, nonce zase nutí k dynamickému vykreslování. Ověřit v report-only na buildu. | já | při inicializaci projektu |
-| Potvrdit hosting a doménu | Určuje, kde hlavičky žijí (`vercel.json` / `next.config` / `middleware.ts`) | klient | — |
+| Ověřit CSP v Report-Only a zvolit finální režim | Next.js 16 používá `proxy.ts` pro per-request nonce; nonce může změnit statické vykreslování. | já | po nasazení základních hlaviček |
+| Potvrdit vlastní doménu | Deployment URL je chráněná Vercel Authentication; nutné pro veřejné spuštění a SEO. | klient | — |
 | Mapa v Kontaktu: vlastní odkaz, nebo embed? | Embed (Google, Mapy.cz) vyžaduje `frame-src` | já + klient | před návrhem Kontaktu |
 | Analytika ano či ne | Přidá třetí stranu do CSP a otázku souhlasu | klient | — |
-| `.gitignore`, `security.txt`, CI workflow | Základ ze skillu `web-security-setup`, kroky 5 a 7 | já | při inicializaci repa |
+| Zpřístupnit `security.txt` na veřejné doméně | Soubor je v repozitáři, ale Vercel Authentication může blokovat veřejný přístup. | já | po připojení vlastní domény |
 | HSTS preload | Až po měsíci bezproblémového provozu na https | já | po spuštění |
 | DNS (DNSSEC, CAA, SPF/DMARC) | Bez nich může kdokoli posílat poštu z domény klienta | klient / registrátor | po získání přístupu k DNS |
 | E-mailová adresa klienta | Veřejně uvedený e-mail láká spam, zvážit formu zobrazení (ne obfuskace na úkor přístupnosti) | já + klient | — |

@@ -27,8 +27,8 @@ export function Gallery() {
       <SectionHeading
         id="galerie-title"
         eyebrow="Galerie"
-        title="Hotové zakázky, střecha po střeše."
-        intro="Každá zakázka má vlastní sadu fotek. Klikněte na projekt, zobrazí se všechny jeho fotky. Fotku si pak můžete zvětšit a listovat šipkami."
+        title="Ukázky našich realizací"
+        intro="Prohlédněte si vybrané fotografie z našich realizací a seznamte se s průběhem demontáže eternitových střech."
       />
       <ul className="mt-14 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((p) => (
@@ -41,6 +41,7 @@ export function Gallery() {
                     alt={p.cover.alt}
                     label={`${p.title}, úvodní`}
                     ratio="4 / 3"
+                    objectPosition={p.coverPosition}
                     sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
                   />
                 </div>

@@ -4,9 +4,9 @@ Co se opravdu stalo, aktuální stav a proč. Pravidla zápisu viz `pravidla.md`
 
 ## Aktuální stav
 - **Projekt:** Eternit - web, osobní web Michala Varchola (pravopis příjmení ověřit), Litoměřice. Z malíře specialista na likvidaci eternitu a azbestu.
-- **Fáze:** Kostra webu hotová (2026-10-12). Všechny sekce podle AGENTS.md §4 a §5 existují s placeholdery, `npm run build` a `npm run lint` prochází bez chyb a varování. Čeká se na podklady od klienta.
-- **Stack:** Next.js 16 (App Router) + TypeScript, Tailwind CSS, Framer Motion, hosting Vercel (potvrzení hostingu čeká na klienta).
-- **Co existuje:** Next.js 16.4 + React 19.3 + Tailwind 4 + framer-motion 12. Sekce Hero, Stats, Služby, Kde působíme (SVG mapa krajů), Postup (časová osa), Reference, Galerie (projekty + lightbox na `<dialog>`), O nás, Spolupráce, Kontakt, hlavička se scrollspy a mobilním menu, patička. `robots.ts`, `sitemap.ts`, metadata.
+- **Fáze:** Kostra webu hotová (2026-10-12); 2026-10-19 doplněny fotografie projektů, reference, statistiky a ověřené kontakty. Probíhá push a nasazení na Vercel. Zbývá pravopis jména a doména.
+- **Stack:** Next.js 16 (App Router) + TypeScript, Tailwind CSS, Framer Motion, hosting Vercel potvrzený uživatelem 2026-10-19.
+- **Co existuje:** Next.js 16.4 + React 19.3 + Tailwind 4 + framer-motion 12. Sekce Hero, Stats, Služby, Kde působíme (SVG mapa krajů), Postup (časová osa), Reference, Galerie (projekty + lightbox na `<dialog>`), Spolupráce, Kontakt, hlavička se scrollspy a mobilním menu, patička. `robots.ts`, `sitemap.ts`, metadata. Sekce O nás byla odstraněna 2026-10-19.
 - **Brief chybí:** `varchol-claude-code-prompt.md` v kořeni není a prázdný je i `web-project-brief.md`. Kostra vznikla jen z `AGENTS.md` a z této paměti. Až brief dorazí, porovnat s ním.
 
 ## Klíčová rozhodnutí
@@ -17,6 +17,8 @@ Nepřehodnocují se bez výslovného pokynu uživatele. Převzato z `AGENTS.md` 
 - **2026-10-12:** Reference jsou vlastní na webu, ne Google ani Seznam.
 - **2026-10-12:** Design varianta A: sjednocené bílé pozadí na celé stránce (žádné tmavé sekce), text `#0E120F`, zelená `#5ED33F` (přesný odstín z dodaného obrázku) na plochách a v hero; text `#317C1D`. Viz rozhodnutí 2026-10-18. Písma Archivo (nadpisy) a Manrope (text). Podpisový motiv: vlnovka podle profilu eternitové desky.
 - **2026-10-12:** Mapa je skutečný tvar ČR rozdělený na kraje (SVG), tři kraje svítí a reagují na hover. Proces je časová osa ve stylu Vizeon s postupnou animací.
+- **2026-10-19:** Uživatel potvrdil statistiky 30+ dokončených zakázek, 100 % spokojených klientů a 3+ roky praxe. Potvrdil také novou referenci z Libochovic a kontakty převzaté z malířského webu (telefon, e-mail, IČO, adresa) pro použití na webu o eternitu.
+- **2026-10-19:** Sekce O nás byla odstraněna; navigace a seznam kotviček odpovídají aktuální struktuře.
 - **2026-10-18:** Akcent webu je přesná zelená z dodaného obrázku `#5ED33F` (na pokyn uživatele, nahrazuje `#1F7A3E` a `#4FD07D`). Na bílé se tato zelená jako text nesmí použít (kontrast 1,9:1), text a obrysy jdou v `#317C1D`, tlačítka mají tmavý text. Hero zesvětlený (překryv ink/80 → ink/10).
 - **2026-10-12:** Bez loga. Inspirace likvidace-eternitu.org (zelená, černá), přebírá se jen směr, ne copy ani layout 1:1. Zdroj: poznámky uživatele v Pages.
 - **2026-10-12:** `AGENTS.md` je jediný zdroj pravidel pro všechny agenty, `CLAUDE.md` na něj má jen odkazovat. Rozhodla jiná session při paralelní práci, zde zaznamenáno.
@@ -29,32 +31,23 @@ Sekce webu: Hero (fotka Litoměřic, likvidace eternitu a azbestu, demontáž) �
 
 ## Otevřené otázky
 Čekají na uživatele nebo klienta. Po zodpovězení smazat.
-- **Kandidáti z malířského webu klienta** (`~/Desktop/Podnikání/Klienti /dokončené projekty /Varchol - malíř /index.html`), do webu zatím NEDOSAZENO: telefon +420 734 212 595, e-mail mvarchy@gmail.com, IČO 05850100, lešení „rámové lešení Pletac PD 70“. Ověřit, jestli platí i pro eternit. Portfolio VIZEON píše příjmení „Varchol“, což je silná nápověda k pravopisu.
-- Copy sekcí spolupráce, o nás a nadpis služeb je pracovní návrh. Hero, služby (úvod a výhody), kde působíme, postup a kontakt jsou od klienta (2026-10-12).
+- Copy sekcí spolupráce a nadpis služeb je pracovní návrh. Hero, služby (úvod a výhody), kde působíme, postup a kontakt jsou od klienta (2026-10-12).
 - Odkaz ve Spolupráci vede na malířský web klienta. Potvrdit, že ho tam klient chce.
 - Pravopis příjmení (Varchol / Varhol).
-- Telefon, e-mail, IČO, adresa.
-- Texty referencí, seznam projektů do galerie a fotky.
-- Popis pronájmu lešení.
 - Oprávnění a certifikace k práci s azbestem: co firma skutečně má a co smí web uvádět.
 - Existuje web malířských prací (odkaz ve Spolupráci)?
 - Města v popiscích mapy.
-- Potvrzení hostingu na Vercelu a domény.
-- Platí „5 let praxe, 30+ projektů“? V poznámkách je to pod „Třeba“, tedy jako příklad. Do potvrzení se nepoužije.
+- Potvrzení domény.
 - Kde je brief? `AGENTS.md` i `CLAUDE.md` odkazují na `varchol-claude-code-prompt.md`, soubor v kořeni není. Vznikne skillem `web-project-brief`, nebo leží jinde? Prázdný `web-project-brief.md` v kořeni je asi zbytek, rozhodnout, jestli se smaže.
 - Složky `~/Downloads/likvidace-eternitu-azbestu-litomerice.cz-main` a `...-2.cz-main` (Drupal): původní web, zdroj fotek, nebo nesouvisí? Nic se z nich nepřebírá, dokud to není jasné.
 - Klíčová slova a cílení (Litoměřice, kraje) nejsou validovaná. Nevymýšlet, navrhnout kandidáty a ověřit v nástroji (skill `seo-collabim-keyword-loop`).
-- Konec věty v sekci O NÁS v poznámkách je useknutý („…sdílejí poptávku po“).
 - Mapa v Kontaktu: pouhý odkaz, nebo embed? Embed (Google, Mapy.cz) by vyžadoval `frame-src` v CSP.
 
 ## Záměrně nehotové
 Aby to příští session neopravila jako chybu.
-- **Fotky jsou prázdné, zřetelně označené placeholdery.** Čeká se na klienta. Nenahrazovat bez podkladů, nikdy fotobanka.
-- **Kontaktní údaje jsou placeholdery `[DOPLNIT]`.**
 - **Formulář chybí záměrně.**
 - **Web je neindexovaný** (`robots: noindex` v `layout.tsx`, `LAUNCHED = false` v `robots.ts`). Důvod: placeholdery a neznámá doména. Přepnout při spuštění, spolu se `site.url`.
 - **Doména v `site.url` je zástupná** (`doplnit-domenu.cz`).
-- **Čísla „let praxe“ a „zakázek“ ve Stats jsou `[DOPLNIT]`.** Jediné číslo je 3 kraje.
 - **Bez JSON-LD schema.** Přidá se až z ověřených údajů (jméno, telefon, IČO, adresa).
 - **Bezpečnostní hlavičky a CSP nejsou nastavené.** Jen `poweredByHeader: false`. Celý základ přes `web-security-setup` najednou, ne po částech.
 - **`.codex/` je prázdná.** Codex čte `AGENTS.md` a skills z `.agents/skills`, vlastní konfigurace se zatím nepotřebuje.
@@ -62,6 +55,30 @@ Aby to příští session neopravila jako chybu.
 
 ## Changelog
 Nejnovější nahoře.
+
+### 2026-10-19: Bezpečnostní základ pro Vercel
+- **Co:** Připraveny bezpečnostní hlavičky v `vercel.json`, `security.txt`, kontrola závislostí a sken tajemství v GitHub Actions, kopie kontrolního skriptu a aktualizován bezpečnostní stav. CSP čeká na ověření živého webu.
+- **Proč:** Projektová pravidla vyžadují bezpečnostní základ při nasazení; současný web je již živý a chráněný Vercel Authentication.
+- **Dopad:** Hlavičky čekají na Vercel build; veřejná dostupnost `security.txt` závisí na vlastní doméně a ochraně Vercelu.
+- **Soubory:** `vercel.json`, `public/.well-known/security.txt`, `.github/workflows/security.yml`, `.claude/security/`
+
+### 2026-10-19: Doplnění fotek a potvrzených údajů
+- **Co:** Projektové fotky jsou rozdělené na úvodní a galerijní snímky; doplněny reference, statistiky a kontakty. Uživatel potvrdil jejich přesnost i použití na webu. Sekce O nás byla odstraněna.
+- **Proč:** Na pokyn a následné potvrzení uživatele.
+- **Dopad:** Galerie, reference, Stats, kontakt a navigace; web zůstává neindexovaný do potvrzení domény.
+- **Soubory:** `public/fotky/`, `src/data/projects.ts`, `src/data/references.ts`, `src/data/site.ts`, `src/app/page.tsx`, `src/components/sections/`, `AGENTS.md`
+
+### 2026-10-19: Lokální build omezen prostředím
+- **Co:** `npm run build` nedokončil Turbopack kvůli zákazu otevřít interní port; Webpack fallback narazil na nedostupnost `fonts.googleapis.com` a chybějící `@tailwindcss/postcss`. Lint po odstranění nepoužitého importu prochází.
+- **Proč:** Omezení lokálního prostředí při přípravě nasazení.
+- **Dopad:** Produkční build je nutné potvrdit Vercel buildem.
+- **Soubory:** `src/components/sections/Hero.tsx`
+
+### 2026-10-19: Úklid importu v Hero
+- **Co:** Odstraněn nepoužitý import `site` po odebrání hero nadtitulku.
+- **Proč:** Lint na něj upozornil při přípravě nasazení.
+- **Dopad:** Izolované.
+- **Soubory:** `src/components/sections/Hero.tsx`
 
 ### 2026-10-18: Přesná zelená a zesvětlené hero
 - **Co:** Akcent přepnut na `#5ED33F` (vzorkováno z dodaného obrázku). Pro text, ikony a obrysy na bílém přidán tmavší odstín `#317C1D`, hover ploch `#4EC72E`. Tlačítka s tmavým textem, mapa s tmavým popiskem. Překryv hero zesvětlen z ink/90–25 na ink/80–10.

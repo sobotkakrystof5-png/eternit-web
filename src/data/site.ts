@@ -39,7 +39,6 @@ export const nav: NavItem[] = [
   { id: "proces", label: "Postup" },
   { id: "reference", label: "Reference" },
   { id: "galerie", label: "Galerie" },
-  { id: "o-nas", label: "O nás" },
   { id: "spoluprace", label: "Spolupráce" },
   { id: "kontakt", label: "Kontakt" },
 ];
@@ -51,11 +50,11 @@ export type Stat = {
   label: string;
 };
 
-// Čísla potvrdil zadavatel 2026-10-12.
+// 30+ zakázek a 100 % potvrdil zadavatel 2026-10-12; praxi na 3+ upřesnil 2026-10-19.
 export const stats: Stat[] = [
   { value: 30, suffix: "+", label: "dokončených zakázek" },
   { value: 100, suffix: "\u00a0%", label: "spokojených klientů" },
-  { value: 5, suffix: "+", label: "let praxe" },
+  { value: 3, suffix: "+", label: "let praxe" },
 ];
 
 export type Service = {

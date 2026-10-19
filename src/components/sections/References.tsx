@@ -11,6 +11,7 @@ export function References() {
             <span aria-hidden="true" className="font-wide text-[64px] font-black leading-[0.6] text-green-text">
               „
             </span>
+            {r.date && <p className="mt-4 text-[14px] text-ink-soft">{r.date}</p>}
             <blockquote className="mt-4 flex-1 text-[17px] leading-relaxed">{r.quote}</blockquote>
             <p className="mt-8 border-t border-line pt-4 text-[14px]">
               <span className="font-bold">{r.author}</span>

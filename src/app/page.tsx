@@ -7,7 +7,6 @@ import { RegionsMap } from "@/components/sections/RegionsMap";
 import { Process } from "@/components/sections/Process";
 import { References } from "@/components/sections/References";
 import { Gallery } from "@/components/sections/Gallery";
-import { About } from "@/components/sections/About";
 import { Collaboration } from "@/components/sections/Collaboration";
 import { Contact } from "@/components/sections/Contact";
 
@@ -23,7 +22,6 @@ export default function Home() {
         <Process />
         <References />
         <Gallery />
-        <About />
         <Collaboration />
         <Contact />
       </main>

@@ -14,7 +14,7 @@ export function Collaboration() {
         <SectionHeading
           id="spoluprace-title"
           eyebrow="Spolupráce"
-          title="Malířství a eternit pod jednou střechou."
+          title="Malířské práce a renovace dřevěných fasád a eternit pod jednou střechou."
           intro="Po demontáži eternitu často přijdou na řadu fasáda nebo interiér. Malířské a natěračské práce dělá stejný člověk, takže nemusíte shánět dalšího řemeslníka."
         />
 
@@ -23,10 +23,10 @@ export function Collaboration() {
           whileInView="together"
           viewport={{ once: true, margin: "-20% 0px" }}
           className="font-wide mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[clamp(2.2rem,5.6vw,5.6rem)] font-black uppercase leading-none tracking-[-0.02em]"
-          aria-label="Malířství a Eternit"
+          aria-label="Malířské práce a Eternit"
         >
           <motion.span variants={{ apart: { x: "-18%", opacity: 0 }, together: { x: 0, opacity: 1 } }} transition={join}>
-            Malířství
+            MALÍŘSKÉ PRÁCE
           </motion.span>
           <motion.span
             aria-hidden="true"
@@ -41,7 +41,7 @@ export function Collaboration() {
             variants={{ apart: { x: "18%", opacity: 0 }, together: { x: 0, opacity: 1 } }}
             transition={join}
           >
-            Eternit
+            ETERNIT
           </motion.span>
         </motion.div>
         <WaveRule className="mx-auto mt-8" width="min(100%, 30rem)" />

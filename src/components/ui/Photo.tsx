@@ -17,15 +17,31 @@ type Props = {
   objectPosition?: string;
   /** `cover` ořízne fotku do rámu, `contain` ji zobrazí celou ve svém původním poměru. */
   fit?: "cover" | "contain";
+  /** Fotka se zobrazí celá ve svém přirozeném poměru stran, bez ořezu a bez pevného rámu. */
+  natural?: boolean;
 };
 
 /**
  * Všechny obrázky webu jdou přes tuto komponentu.
  * Bez `src` vykreslí zřetelně označený placeholder. Fotky dodá klient, nikdy fotobanka.
  */
-export function Photo({ src, alt, label, ratio = "4 / 3", sizes, className = "", preload, tone = "light", fill, objectPosition, fit = "cover" }: Props) {
+export function Photo({ src, alt, label, ratio = "4 / 3", sizes, className = "", preload, tone = "light", fill, objectPosition, fit = "cover", natural }: Props) {
   const box = fill ? "absolute inset-0" : "relative w-full";
   const style = fill ? undefined : { aspectRatio: ratio };
+
+  if (natural && src) {
+    return (
+      <Image
+        src={src}
+        alt={alt}
+        width={1600}
+        height={1200}
+        sizes={sizes}
+        style={{ width: "100%", height: "auto" }}
+        className={className}
+      />
+    );
+  }
 
   if (!src) {
     const dark = tone === "dark";

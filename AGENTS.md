@@ -46,12 +46,12 @@ Uživatel je vlastník a zadavatel projektu, ne junior vývojář. Chovej se jak
 ## 4. KONTEXT PROJEKTU (SHRNUTÍ)
 
 - **Klient:** Michal Varchol (pravopis příjmení OVĚŘIT), Litoměřice. Z malíře specialista na likvidaci eternitu a azbestu.
-- **Nabídka:** hlavní služba likvidace azbestu a eternitu, doplňková pronájem lešení. Působnost Ústecký, Středočeský a Liberecký kraj. Sekce Spolupráce: Malířství × Eternit.
+- **Nabídka:** hlavní služba likvidace azbestu a eternitu, doplňková pronájem lešení. Působnost Ústecký, Středočeský a Liberecký kraj. Sekce Spolupráce: Malířské práce × Eternit.
 - **Tech stack:** Next.js 16 (App Router) + TypeScript, Tailwind CSS, Framer Motion, hosting Vercel. Žádný backend, žádné API klíče.
-- **Struktura:** jednostránkový web (landing page), kotvy `#sluzby`, `#kde-pusobime`, `#proces`, `#reference`, `#galerie`, `#o-nas`, `#spoluprace`, `#kontakt`, scrollspy. Závazné rozhodnutí.
+- **Struktura:** jednostránkový web (landing page), kotvy `#sluzby`, `#kde-pusobime`, `#proces`, `#reference`, `#galerie`, `#spoluprace`, `#kontakt`, scrollspy. Závazné rozhodnutí.
 - **Kontakt:** **bez formuláře** (rozhodnutí klienta). Jen telefon (hlavní CTA) a e-mail.
 - **Design:** varianta A z Claude Design. Sjednocené **bílé pozadí** na celé stránce, text `#0E120F`, zelená `#5ED33F` (přesný odstín z dodaného obrázku) na plochách, liniích a v hero; text a obrysy `#317C1D` (kontrast 5,2:1 na bílé). Písma Archivo + Manrope. Motiv: vlnovka podle profilu eternitové desky. Mapa = skutečné SVG krajů ČR, tři kraje svítí a reagují na hover. Proces = časová osa ve stylu Vizeon s postupnou animací.
-- **Fotky:** zatím jasně označené placeholdery. Nenahrazovat bez podkladů, **nikdy fotobanka**.
+- **Fotky:** podklady jsou v `public/fotky`, projekty mají oddělené `HERO - galerie` a `galerie`. **Nikdy fotobanka**.
 - **Priorita:** originalita bez AI šablony, důvěryhodnost, rychlost i s velkým množstvím fotek.
 
 ---
@@ -69,16 +69,15 @@ Uživatel je vlastník a zadavatel projektu, ne junior vývojář. Chovej se jak
 src/
   app/            layout.tsx, page.tsx, sitemap.ts, robots.ts
   components/
-    sections/     Hero, Stats, Services, RegionsMap, Process, References, Gallery, About, Collaboration, Contact
+    sections/     Hero, Stats, Services, RegionsMap, Process, References, Gallery, Collaboration, Contact
     ui/           Photo (placeholder / next/image), Wave (vlnovka), Lightbox, Header, Footer, CallButton, SectionHeading, MotionProvider
   data/           site.ts, projects.ts, references.ts, process.ts, regions.ts, czMap.ts
 public/
   fotky/
     projekty/<slug>/  fotky jednotlivých zakázek (slug viz src/data/projects.ts)
     hero/             fotky do hero sekce
-    varchol/          portrétní fotky majitele (sekce O nás)
     leseni/           fotky k pronájmu lešení
-  Všechny fotky jsou .webp; v projektech 01.webp = úvodní fotka zakázky, počet fotek se udává v src/data/projects.ts.
+  Všechny fotky jsou .webp; `src/data/projects.ts` výslovně mapuje úvodní fotku v `HERO - galerie` a ostatní fotky v `galerie`.
 scripts/          převod GeoJSON → SVG
 ```
 
@@ -102,24 +101,21 @@ scripts/          převod GeoJSON → SVG
 
 Aktualizuj na konci každé session, bez ohledu na to, který agent pracoval. Další session si předchozí nepamatuje. Zápisy krátké, jen fakta, s datem a označením agenta (např. `[Codex]`, `[Claude]`).
 
-- **Aktuální fáze:** kostra webu hotová (2026-10-12, [Claude]): všechny sekce, mapa, časová osa, galerie s lightboxem, placeholdery. Čeká se na podklady od klienta. Detail v `.memory/memory.md`.
+- **Aktuální fáze:** kostra hotová; fotky, reference, statistiky a kontakty doplněny či potvrzeny 2026-10-19. Čeká se na pravopis jména a doménu. Detail v `.memory/memory.md`.
 - **Poslední zásadní rozhodnutí:**
   - 2026-10-12: Next.js 16 místo HTML/CSS kvůli velkému množství fotek.
   - 2026-10-12: formulář na webu nebude, kontakt jen telefonem a e-mailem.
   - 2026-10-12: reference vlastní na webu, ne Google ani Seznam.
   - 2026-10-12: sjednocené bílé pozadí, mapa jako skutečné SVG krajů ČR.
   - 2026-10-12: AGENTS.md je jediný zdroj pravidel, CLAUDE.md na něj odkazuje.
+  - 2026-10-19: uživatel potvrdil statistiky 30+ zakázek, 100 % spokojených klientů a 3+ roky praxe; potvrdil také reference a kontaktní údaje.
+  - 2026-10-19: sekce O nás byla odstraněna; navigace odpovídá aktuálním sekcím.
 - **Otevřené otázky čekající na klienta:**
   - pravopis příjmení (Varchol / Varhol),
-  - telefon, e-mail, IČO, adresa,
-  - reference a projekty do galerie + fotky,
-  - popis pronájmu lešení,
   - oprávnění/certifikace k práci s azbestem,
   - odkaz na web malířských prací,
-  - potvrzení hostingu na Vercelu.
+  - doména webu.
 - **Co záměrně ještě NENÍ hotové** (neopravovat jako chybu):
-  - fotky jsou placeholdery,
-  - kontaktní údaje jsou `[DOPLNIT]`,
   - formulář chybí záměrně.
 
 ---
