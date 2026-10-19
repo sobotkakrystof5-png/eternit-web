@@ -84,7 +84,7 @@ export const services: Service[] = [
       "Zajištění demontáže, dopravy a předání azbestového odpadu oprávněnému zařízení.",
     ],
     photoLabel: "Demontáž eternitové střechy",
-    photo: { src: "/fotky/projekty/13-libochovice/04.webp", alt: "Pracovník v ochranném obleku snímá eternitovou vlnovku ze střechy" },
+    photo: { src: "/fotky/projekty/13-libochovice/galerie/04.webp", alt: "Pracovník v ochranném obleku snímá eternitovou vlnovku ze střechy" },
     primary: true,
   },
   {

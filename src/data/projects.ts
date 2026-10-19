@@ -23,7 +23,8 @@ const project = (
   galleryFiles: string[],
   coverPosition?: string,
 ): Project => {
-  const url = (path: string) => encodeURI(`/fotky/projekty/${slug}/${path}`);
+  // `next/image` zakóduje cestu samo; předchozí encodeURI způsoboval dvojité kódování mezer.
+  const url = (path: string) => `/fotky/projekty/${slug}/${path}`;
   const srcs = [url(heroPath), ...galleryFiles.map((f) => url(`${galleryDir}/${f}`))];
   const photos = srcs.map((src, i) => ({ src, alt: `${work} ${title}, fotka ${i + 1}` }));
   return { slug, title, place: work, cover: photos[0], photos, coverPosition };

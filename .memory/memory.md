@@ -4,7 +4,7 @@ Co se opravdu stalo, aktuální stav a proč. Pravidla zápisu viz `pravidla.md`
 
 ## Aktuální stav
 - **Projekt:** Eternit - web, osobní web Michala Varchola (pravopis příjmení ověřit), Litoměřice. Z malíře specialista na likvidaci eternitu a azbestu.
-- **Fáze:** Kostra webu hotová (2026-10-12); 2026-10-19 doplněny fotografie projektů, reference, statistiky a ověřené kontakty. Probíhá push a nasazení na Vercel. Zbývá pravopis jména a doména.
+- **Fáze:** Kostra webu hotová (2026-10-12); 2026-10-19 doplněny fotografie projektů, reference, statistiky a ověřené kontakty. První nasazení odhalilo chybu v cestách k fotkám, oprava čeká na Vercel build. Zbývá pravopis jména a doména.
 - **Stack:** Next.js 16 (App Router) + TypeScript, Tailwind CSS, Framer Motion, hosting Vercel potvrzený uživatelem 2026-10-19.
 - **Co existuje:** Next.js 16.4 + React 19.3 + Tailwind 4 + framer-motion 12. Sekce Hero, Stats, Služby, Kde působíme (SVG mapa krajů), Postup (časová osa), Reference, Galerie (projekty + lightbox na `<dialog>`), Spolupráce, Kontakt, hlavička se scrollspy a mobilním menu, patička. `robots.ts`, `sitemap.ts`, metadata. Sekce O nás byla odstraněna 2026-10-19.
 - **Brief chybí:** `varchol-claude-code-prompt.md` v kořeni není a prázdný je i `web-project-brief.md`. Kostra vznikla jen z `AGENTS.md` a z této paměti. Až brief dorazí, porovnat s ním.
@@ -55,6 +55,12 @@ Aby to příští session neopravila jako chybu.
 
 ## Changelog
 Nejnovější nahoře.
+
+### 2026-10-19: Oprava cest k fotkám po nasazení
+- **Co:** Odstraněno předběžné kódování URL v galerii (Next Image kóduje mezery samo) a opravena cesta službové fotky po přesunu do `galerie/`.
+- **Proč:** Kontrola živého nasazení našla dvojitě zakódované URL úvodních fotek a jeden zastaralý odkaz.
+- **Dopad:** Opravené galerie a fotografie služby po dalším Vercel buildu.
+- **Soubory:** `src/data/projects.ts`, `src/data/site.ts`
 
 ### 2026-10-19: Bezpečnostní základ pro Vercel
 - **Co:** Připraveny bezpečnostní hlavičky v `vercel.json`, `security.txt`, kontrola závislostí a sken tajemství v GitHub Actions, kopie kontrolního skriptu a aktualizován bezpečnostní stav. CSP čeká na ověření živého webu.
