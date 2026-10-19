@@ -4,7 +4,7 @@ Co se opravdu stalo, aktuální stav a proč. Pravidla zápisu viz `pravidla.md`
 
 ## Aktuální stav
 - **Projekt:** Eternit - web, osobní web Michala Varchola (pravopis příjmení ověřit), Litoměřice. Z malíře specialista na likvidaci eternitu a azbestu.
-- **Fáze:** Kostra webu hotová (2026-10-12); 2026-10-19 doplněny fotografie projektů, reference, statistiky a ověřené kontakty. První nasazení odhalilo chybu v cestách k fotkám, oprava čeká na Vercel build. Zbývá pravopis jména a doména.
+- **Fáze:** Fotky, reference, statistiky a ověřené kontakty nasazeny na Vercel 2026-10-19. Produkční kontrola našla chybu v kódování cest; opravená verze `1c6a3de` běží. Zbývá pravopis jména a vlastní doména.
 - **Stack:** Next.js 16 (App Router) + TypeScript, Tailwind CSS, Framer Motion, hosting Vercel potvrzený uživatelem 2026-10-19.
 - **Co existuje:** Next.js 16.4 + React 19.3 + Tailwind 4 + framer-motion 12. Sekce Hero, Stats, Služby, Kde působíme (SVG mapa krajů), Postup (časová osa), Reference, Galerie (projekty + lightbox na `<dialog>`), Spolupráce, Kontakt, hlavička se scrollspy a mobilním menu, patička. `robots.ts`, `sitemap.ts`, metadata. Sekce O nás byla odstraněna 2026-10-19.
 - **Brief chybí:** `varchol-claude-code-prompt.md` v kořeni není a prázdný je i `web-project-brief.md`. Kostra vznikla jen z `AGENTS.md` a z této paměti. Až brief dorazí, porovnat s ním.
@@ -56,16 +56,23 @@ Aby to příští session neopravila jako chybu.
 ## Changelog
 Nejnovější nahoře.
 
+### 2026-10-19: Push a produkční nasazení
+- **Co:** Commit `c10baaa` a následná oprava `1c6a3de` pushnuty na `main`; GitHub hlásí úspěšný Vercel build. V prohlížeči ověřen nový obsah, funkční fotky, odkazy a ovládání.
+- **Proč:** Na výslovný pokyn uživatele.
+- **Dopad:** Produkční alias `https://eternit-web-six.vercel.app/` zobrazuje nové fotky, reference a kontakty. Bez horizontálního přetečení při šířkách 390, 768 a 1440 px; konzole bez chyb/varování. Mobilní menu funguje Enter/Escape a klávesnicovou navigací, lightbox šipkou a Escape se vrací fokus, výběr kraje v mapě jde klávesnicí, `tel:`/`mailto:` odpovídají potvrzeným kontaktům.
+- **Omezení:** `.claude/security/security-check.sh` v lokálním prostředí skončil kódem 2, protože z něj nelze navázat spojení s URL; Vercel MCP vrací 403. Hlavičky jsou v `vercel.json`, jejich přijetí živým serverem tímto auditem nebylo potvrzeno. Vercel URL je chráněná přihlášením; veřejné spuštění čeká na vlastní doménu.
+- **Soubory:** `AGENTS.md`, `.memory/memory.md`, `.claude/security/`
+
 ### 2026-10-19: Oprava cest k fotkám po nasazení
 - **Co:** Odstraněno předběžné kódování URL v galerii (Next Image kóduje mezery samo) a opravena cesta službové fotky po přesunu do `galerie/`.
 - **Proč:** Kontrola živého nasazení našla dvojitě zakódované URL úvodních fotek a jeden zastaralý odkaz.
-- **Dopad:** Opravené galerie a fotografie služby po dalším Vercel buildu.
+- **Dopad:** Oprava `1c6a3de` je v produkci; úvodní snímek i galerie projektu Veltěže se načetly bez chyby.
 - **Soubory:** `src/data/projects.ts`, `src/data/site.ts`
 
 ### 2026-10-19: Bezpečnostní základ pro Vercel
 - **Co:** Připraveny bezpečnostní hlavičky v `vercel.json`, `security.txt`, kontrola závislostí a sken tajemství v GitHub Actions, kopie kontrolního skriptu a aktualizován bezpečnostní stav. CSP čeká na ověření živého webu.
 - **Proč:** Projektová pravidla vyžadují bezpečnostní základ při nasazení; současný web je již živý a chráněný Vercel Authentication.
-- **Dopad:** Hlavičky čekají na Vercel build; veřejná dostupnost `security.txt` závisí na vlastní doméně a ochraně Vercelu.
+- **Dopad:** Konfigurace je v produkci; živé ověření HTTP hlaviček neprošlo kvůli síťovému omezení. Veřejná dostupnost `security.txt` závisí na vlastní doméně a ochraně Vercelu.
 - **Soubory:** `vercel.json`, `public/.well-known/security.txt`, `.github/workflows/security.yml`, `.claude/security/`
 
 ### 2026-10-19: Doplnění fotek a potvrzených údajů
@@ -77,7 +84,7 @@ Nejnovější nahoře.
 ### 2026-10-19: Lokální build omezen prostředím
 - **Co:** `npm run build` nedokončil Turbopack kvůli zákazu otevřít interní port; Webpack fallback narazil na nedostupnost `fonts.googleapis.com` a chybějící `@tailwindcss/postcss`. Lint po odstranění nepoužitého importu prochází.
 - **Proč:** Omezení lokálního prostředí při přípravě nasazení.
-- **Dopad:** Produkční build je nutné potvrdit Vercel buildem.
+- **Dopad:** Produkční build na Vercelu prošel pro opravený commit `1c6a3de`.
 - **Soubory:** `src/components/sections/Hero.tsx`
 
 ### 2026-10-19: Úklid importu v Hero

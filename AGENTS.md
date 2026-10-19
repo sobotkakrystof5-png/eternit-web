@@ -101,7 +101,7 @@ scripts/          převod GeoJSON → SVG
 
 Aktualizuj na konci každé session, bez ohledu na to, který agent pracoval. Další session si předchozí nepamatuje. Zápisy krátké, jen fakta, s datem a označením agenta (např. `[Codex]`, `[Claude]`).
 
-- **Aktuální fáze:** kostra hotová; fotky, reference, statistiky a kontakty doplněny či potvrzeny 2026-10-19. Čeká se na pravopis jména a doménu. Detail v `.memory/memory.md`.
+- **Aktuální fáze:** fotky, reference, statistiky a kontakty doplněny a nasazeny na Vercel 2026-10-19; oprava fotocest nasazena v `1c6a3de`. Zbývá pravopis jména a vlastní doména. Detail v `.memory/memory.md`.
 - **Poslední zásadní rozhodnutí:**
   - 2026-10-12: Next.js 16 místo HTML/CSS kvůli velkému množství fotek.
   - 2026-10-12: formulář na webu nebude, kontakt jen telefonem a e-mailem.

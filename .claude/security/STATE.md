@@ -3,7 +3,7 @@
 > Aktuální postoj. Přepisuj volně, historie je v ostatních souborech.
 > Čti na začátku každé session, která se dotýká bezpečnosti.
 
-**Poslední aktualizace:** 2026-10-19 (bezpečnostní konfigurace připravena k nasazení; Vercel tým z této relace nepřístupný)
+**Poslední aktualizace:** 2026-10-19 (hlavičky v produkčním commitu `1c6a3de`; živý audit z lokálního prostředí blokuje síť)
 
 ## Projekt
 
@@ -31,18 +31,18 @@ Realistický útočník: automatické skenery a boty na sběr kontaktů. Nejhor�
 
 ## Hlavičky nasazené
 
-Hlavičky jsou nakonfigurované v `vercel.json`; živé nasazení a kontrola hlaviček čekají na vzdálený build. CSP záměrně není v první fázi zahrnutá.
+Hlavičky jsou nakonfigurované v `vercel.json` a soubor je součástí produkčního commitu `1c6a3de`. Lokální `security-check.sh` skončil kódem 2 bez spojení na doménu, proto hodnoty hlaviček nejsou nezávisle potvrzené v HTTP odpovědi. CSP záměrně není nastavena; další krok je Report-Only.
 
 | Hlavička | Stav | Poznámka |
 |---|---|---|
-| Strict-Transport-Security | 🟡 připraveno | `max-age=63072000; includeSubDomains`, bez `preload` |
+| Strict-Transport-Security | 🟡 v produkční konfiguraci | `max-age=63072000; includeSubDomains`, bez `preload`; živě neověřeno |
 | Content-Security-Policy | ⏳ otevřeno | Nejprve ověřit Report-Only; Next.js 16 CSP s nonce může změnit statické renderování |
-| X-Content-Type-Options | 🟡 připraveno | nosniff |
-| X-Frame-Options | 🟡 připraveno | DENY |
-| Referrer-Policy | 🟡 připraveno | strict-origin-when-cross-origin |
-| Permissions-Policy | 🟡 připraveno | Zakázané nepoužívané funkce; fullscreen povolený pro web |
-| Cross-Origin-Opener-Policy | 🟡 připraveno | same-origin |
-| Cross-Origin-Resource-Policy | 🟡 připraveno | same-origin |
+| X-Content-Type-Options | 🟡 v produkční konfiguraci | nosniff; živě neověřeno |
+| X-Frame-Options | 🟡 v produkční konfiguraci | DENY; živě neověřeno |
+| Referrer-Policy | 🟡 v produkční konfiguraci | strict-origin-when-cross-origin; živě neověřeno |
+| Permissions-Policy | 🟡 v produkční konfiguraci | Zakázané nepoužívané funkce; fullscreen povolený; živě neověřeno |
+| Cross-Origin-Opener-Policy | 🟡 v produkční konfiguraci | same-origin; živě neověřeno |
+| Cross-Origin-Resource-Policy | 🟡 v produkční konfiguraci | same-origin; živě neověřeno |
 | X-Powered-By odstraněno | ✅ v kódu | `poweredByHeader: false` v `next.config.ts` (2026-10-12) |
 
 ## CSP
