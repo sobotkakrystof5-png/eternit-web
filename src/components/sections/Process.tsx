@@ -19,7 +19,7 @@ export function Process() {
             id="proces-title"
             eyebrow="Postup"
             title="Jak probíhá likvidace eternitu?"
-            intro="Od první konzultace a zaměření střechy až po odvoz a předání azbestového odpadu."
+            intro="Od prvního zaměření až po bezpečné odstranění eternitu a předání odpadu k odborné likvidaci."
           />
           <CallButton variant="green" className="mt-8" label="Domluvit prohlídku" />
         </div>

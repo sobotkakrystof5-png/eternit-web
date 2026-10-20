@@ -1,55 +1,21 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { site } from "@/data/site";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { WaveRule } from "@/components/ui/Wave";
-
-const join = { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const };
+import { Photo } from "@/components/ui/Photo";
 
 export function Collaboration() {
   return (
     <section id="spoluprace" aria-labelledby="spoluprace-title" className="mx-auto max-w-[90rem] px-4 pt-28 sm:px-6 lg:px-10">
-      <div className="border border-line px-6 py-14 sm:px-10 lg:px-16 lg:py-20">
-        <SectionHeading
-          id="spoluprace-title"
-          eyebrow="Spolupráce"
-          title="Malířské práce a renovace dřevěných fasád a eternit pod jednou střechou."
-          intro="Po demontáži eternitu často přijdou na řadu fasáda nebo interiér. Malířské a natěračské práce dělá stejný člověk, takže nemusíte shánět dalšího řemeslníka."
-        />
-
-        <motion.div
-          initial="apart"
-          whileInView="together"
-          viewport={{ once: true, margin: "-20% 0px" }}
-          className="font-wide mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[clamp(2.2rem,5.6vw,5.6rem)] font-black uppercase leading-none tracking-[-0.02em]"
-          aria-label="Malířské práce a Eternit"
-        >
-          <motion.span variants={{ apart: { x: "-18%", opacity: 0 }, together: { x: 0, opacity: 1 } }} transition={join}>
-            MALÍŘSKÉ PRÁCE
-          </motion.span>
-          <motion.span
-            aria-hidden="true"
-            className="text-green-text"
-            variants={{ apart: { scale: 0.4, opacity: 0 }, together: { scale: 1, opacity: 1 } }}
-            transition={{ ...join, delay: 0.35 }}
-          >
-            ×
-          </motion.span>
-          <motion.span
-            className="text-green-text"
-            variants={{ apart: { x: "18%", opacity: 0 }, together: { x: 0, opacity: 1 } }}
-            transition={join}
-          >
-            ETERNIT
-          </motion.span>
-        </motion.div>
-        <WaveRule className="mx-auto mt-8" width="min(100%, 30rem)" />
-
-        <div className="mt-12 flex justify-center">
+      <div className="grid items-center gap-12 border border-line px-6 py-14 sm:px-10 lg:grid-cols-2 lg:gap-16 lg:px-16 lg:py-20">
+        <div>
+          <SectionHeading
+            id="spoluprace-title"
+            eyebrow="Spolupráce"
+            title="Malířské práce a renovace dřevěných fasád"
+            intro="Po odstranění eternitové krytiny často přichází na řadu oprava fasády, nátěr nebo další práce v interiéru. Nabízíme také malířské, natěračské a renovační práce, a proto po demontáži eternitu nemusíte hledat dalšího řemeslníka."
+          />
           <a
             href={site.paintingWebUrl}
-            className="inline-flex items-center gap-2 border border-ink px-5 py-3 text-[15px] font-bold transition-colors hover:border-green hover:bg-green hover:text-ink"
+            className="mt-10 inline-flex items-center gap-2 border border-ink px-5 py-3 text-[15px] font-bold transition-colors hover:border-green hover:bg-green hover:text-ink"
             rel="noopener"
             target="_blank"
           >
@@ -57,6 +23,13 @@ export function Collaboration() {
             <span className="sr-only">(otevře se v novém okně)</span>
           </a>
         </div>
+
+        <Photo
+          label="malířské nebo natěračské práce na fasádě (dodá klient)"
+          alt="Malířské a natěračské práce na fasádě"
+          ratio="4 / 3"
+          sizes="(min-width: 1024px) 45vw, 100vw"
+        />
       </div>
     </section>
   );
