@@ -47,4 +47,5 @@ export const projects: Project[] = [
   project("11-repcice-trebusin", "Řepčice, Třebušín", "Demontáž eternitu", HERO, "galerie", nums(2, 3)),
   project("12-hostka", "Hoštka", "Demontáž eternitu", HERO, "galerie", nums(2, 3, 4)),
   project("13-libochovice", "Libochovice", "Demontáž eternitu", HERO, "galerie", nums(2, 3, 4)),
+  project("14-chvalin-nove-dvory", "Chvalín, Nové Dvory", "Demontáž eternitu", HERO, "galerie", nums(2, 3, 4, 5, 6, 7)),
 ];
